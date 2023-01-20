@@ -2,22 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Validate') {
-            steps {
-                echo 'Building..'
-		sh '/usr/share/maven/bin/mvn validate'
-            }
-        }
         stage('Build') {
             steps {
-                echo 'Testing..'
+                echo 'Building..'
 		sh '/usr/share/maven/bin/mvn package'
             }
         }
-        stage('Test') {
+        stage('test') {
+            steps {
+                echo 'Building..'
+		sh '/usr/share/maven/bin/mvn test'
+            }
+        }
+        stage('delopy') {
             steps {
                 echo 'Deploying....'
-		sh '/usr/share/maven/bin/mvn test'
+		sh '/usr/share/maven/bin/mvn delopy'
             }
         }
     }
