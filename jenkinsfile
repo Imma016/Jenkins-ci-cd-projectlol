@@ -17,7 +17,7 @@ pipeline {
         stage('delopy') {
             steps {
                 echo 'Deploying....'
-		sh '/usr/share/maven/bin/mvn delopy'
+		sh '/usr/share/maven/bin/mvn deploy'
             }
         }
     }
