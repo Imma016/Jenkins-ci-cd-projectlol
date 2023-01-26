@@ -10,7 +10,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'Building..'
+                echo 'Test..'
 		sh '/usr/share/maven/bin/mvn test'
             }
         }
